@@ -1,0 +1,78 @@
+---
+title: "Exploring Gapminder: Presentation Slides"
+subtitle: "STAT 545 Assignment 1"
+author: "Kaitlin Sullivan"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: center, inverse, middle
+
+## The Gapminder Dataframe
+
+### *Let's explore the gapminder dataframe!*
+
+
+
+
+```{r, echo = FALSE}
+library(gapminder)
+library(tibble)
+```
+---
+class: inverse, middle
+
+The gapminder dataframe contains __6 columns__ with information about __life expectancies, population,__ and __GDP percapita__ in various countries.
+
+```{r}
+#number of columns in the gapminder dataframe
+ncol(gapminder)
+
+#names of columns in the gapminder dataframe
+nm<-names(gapminder)
+paste(nm, collapse= ", ")
+
+```
+---
+class: inverse, middle
+
+ ### There is information provided __every 5 years__, from __1952-2007__.
+
+```{r}
+#interval of years between datapoints
+interval<-(gapminder$year[2]-gapminder$year[1])
+paste(c('data provided every', interval, 'years'), collapse = " ")
+
+#minimum and maximum year in gapminder dataset
+x<-min(gapminder$year)
+y<-max(gapminder$year)
+paste(c('from', x,'to', y), collapse = " ")
+```
+---
+class: inverse, middle
+
+##*Life Expectancy*
+ The average life expectancy at birth in __1952__ was __49 years__.
+ 
+```{r}
+#average life expectancy 1952
+minExp<-subset(gapminder, year == 1952, lifeExp)
+mean(minExp$lifeExp)
+```
+
+The average life expectancy at birth in __2007__ was __67 years__.
+
+```{r}
+#average life expectancy 2007
+maxExp<-subset(gapminder, year == 2007, lifeExp)
+mean(maxExp$lifeExp)
+```
+---
+class: inverse, middle, center
+
+#That's all!
+###_Thanks!_
