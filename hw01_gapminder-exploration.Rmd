@@ -1,9 +1,7 @@
 ---
 title: 'HW 01: Gapminder Exploration'
 author: "Kaitlin Sullivan"
-output:
-  html_document:
-    df_print: paged
+output: github_document
 ---
  
 ```{r setup, include=FALSE}
@@ -43,7 +41,7 @@ paste(c('from', x,'to', y), collapse = " ")
 ```
 
  
- The average life expectancy at birth in __1952__ was __49 years__ .
+ The average life expectancy at birth in __1952__ was __49 years__.
  
 ```{r}
 #average life expectancy 1952
@@ -51,7 +49,7 @@ minExp<-subset(gapminder, year == 1952, lifeExp)
 mean(minExp$lifeExp)
 ```
 
-The average life expectancy at birth in __2007__ was __67 years__ .
+The average life expectancy at birth in __2007__ was __67 years__.
 
 ```{r}
 #average life expectancy 2007
