@@ -5,7 +5,7 @@ output:
   html_document:
     df_print: paged
 ---
-
+ 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -43,7 +43,7 @@ paste(c('from', x,'to', y), collapse = " ")
 ```
 
  
- The average life expectancy at birth in __1952__ was __49 years__.
+ The average life expectancy at birth in __1952__ was __49 years__ .
  
 ```{r}
 #average life expectancy 1952
@@ -51,7 +51,7 @@ minExp<-subset(gapminder, year == 1952, lifeExp)
 mean(minExp$lifeExp)
 ```
 
-The average life expectancy at birth in __2007__ was __67 years__.
+The average life expectancy at birth in __2007__ was __67 years__ .
 
 ```{r}
 #average life expectancy 2007
