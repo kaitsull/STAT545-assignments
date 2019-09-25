@@ -170,9 +170,7 @@ gdpcomp %>%
 ### A different type of graph:
 
 ```{r}
-vPlot <- gapminder %>% 
-  filter(country=="Canada" | country=="Japan") %>% 
-  select(country, pop)
-qplot(country, pop, data = vPlot, geom = "violin")
+#violin plot of gdp percap
+qplot(continent, gdpPercap, data = gapminder, geom = "violin")
 ```
 
