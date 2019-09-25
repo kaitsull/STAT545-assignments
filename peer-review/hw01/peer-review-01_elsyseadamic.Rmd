@@ -1,0 +1,19 @@
+---
+title: "peer-review-01_elyseadamic"
+output: github_document
+---
+
+Peer-Review HW-01 for elyseadamic
+----------------------------------------------------
+Topic                       | Excellent | Satisfactory | Needs Work |
+----------------------------|-----|-----|-----|
+**Coding style**            | |  |:heavy_check_mark: | 
+**Coding strategy**         | |  |:heavy_check_mark: |
+**Presentation: graphs**    | |  |:heavy_check_mark: | 
+**Presentation: tables**    | |  |:heavy_check_mark: | 
+**Achievement, creativity** | |  |:heavy_check_mark: |  
+**Ease of access**          | |  |:heavy_check_mark: |
+
+Remarks:
+
+- Nothing for hw01 :disappointed_relieved:
