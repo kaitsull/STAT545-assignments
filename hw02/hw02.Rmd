@@ -45,7 +45,6 @@ DT::datatable(gapminder %>%
                 filter(lifeExpDiff < 0))
         
 ```
-
 ### 1.4
 Organize gapminder to contain the max GDP per capita experienced by each country.
 
@@ -69,5 +68,111 @@ gapminder %>%
       y = "GDP per capita",
       title = "Canada's Life Expectancy vs GDP Per Capita"
     )
+```
+
+## Exercise 2: Exploring individual variables with `dplyr`
+
+### Categorical Variable: __Continent__
+#### Possible values:
+```{r}
+# Possible continent values and number of coutries in each continent (based on data from 2007).
+knitr::kable(contCount<-gapminder %>% 
+              filter(year == 2007) %>% 
+              count(continent))
+```
+
+#### Typical values, spread, distribution:
+
+```{r}
+#Distribution of countries in each continent:
+contCount %>% 
+  ggplot(aes(x = continent, y = n))+
+    geom_bar(stat = "identity") +
+    labs(
+      x = "Continent",
+      y = "Number of Countries",
+      title = "Number of Countries in Each Continent",
+      subtitle = "(based upon data from gapminder in 2007)"
+    )
+
+
+#Average GDP in each continent in 2007
+DT::datatable(gapminder %>% 
+                group_by(continent, year) %>% 
+	              filter(year == 2007) %>% 
+                mutate(meanGDP = mean(gdpPercap)) %>%
+                ungroup() %>% 
+                group_by(meanGDP) %>% 
+                arrange(meanGDP) %>% 
+                distinct(continent, meanGDP))
+                
+                
+```
+
+### Quantitative Variable: __Population__
+#### Possible values:
+
+Possible values of population across the years presented in gapminder:
+```{r}
+#absolute minimum, maximum and standard deviation:
+knitr::kable(gapminder %>% 
+              mutate(minimum = min(pop), maximum = max(pop), spread = sd(pop)) %>% 
+              distinct(minimum, maximum, spread))
+```
+
+
+Population trends over time:
+
+```{r}
+#Global Population over the years
+gapminder %>% 
+  group_by(year) %>% 
+  summarize(pop=sum(pop)/1) %>% 
+  ggplot(aes(x = year, y = pop))+
+    geom_point() +
+    labs(
+      x = "Year",
+      y = "Population",
+      title = "Global Population Over Time",
+      subtitle = "(based upon data from gapminder from 1952-2007)"
+    )
+```
+
+## Exercise 3: Exploring plots with `ggplot2`
+
+### Scatterplot of 2 quantitative variables:
+
+```{r}
+gdp02 <- gapminder %>% 
+  filter(year==2002) %>% 
+  select(year, country, gdpPercap)
+
+gdp77 <- gapminder %>% 
+  filter(year==1977) %>% 
+  select(year, country, gdpPercap)
+
+gdpcomp <- tibble(country = (gdp77$country), g77 = (gdp77$gdpPercap), g02 = (gdp02$gdpPercap))
+
+gdpcomp %>% 
+  ggplot(aes(x = g77, y = g02))+
+    geom_point(alpha = 0.4) +
+    geom_abline(intercept = 0, slope = 1) +
+    geom_text(aes(label = ifelse((g02>10000 | g77>10000),     as.character(country),''),hjust=0,vjust=0)) +
+  labs(
+      x = "GDP per capita in 1977",
+      y = "GDP per capita in 2002",
+      title = "GDP per capita in 1997 and 2002",
+      subtitle = "(Countries above the black line experienced GDP per capita growth during this time period.)"
+    )
+
+```
+
+### A different type of graph:
+
+```{r}
+vPlot <- gapminder %>% 
+  filter(country=="Canada" | country=="Japan") %>% 
+  select(country, pop)
+qplot(country, pop, data = vPlot, geom = "violin")
 ```
 
