@@ -1,0 +1,24 @@
+---
+title: "peer-review-01_Farnaz1234"
+output: 
+  github_document:
+    keep_md: TRUE
+---
+
+Peer-Review HW-01 for Farnaz1234
+----------------------------------------------------
+Topic                       | Excellent | Satisfactory | Needs Work |
+----------------------------|-----|-----|-----|
+**Coding style**            | :heavy_check_mark: |  |  |
+**Coding strategy**         | :heavy_check_mark: |  |  |
+**Presentation: graphs**    | :heavy_check_mark: |  |  |
+**Presentation: tables**    | :heavy_check_mark: |  |  |
+**Achievement, creativity** | :heavy_check_mark: |  |  |
+**Ease of access**          | :heavy_check_mark: |  |  |
+
+Remarks:
+
+- Everything was simple and easy to access
+- Code ran well and there was a good variety of things presented
+- Realized from your hw that I did an improper tidy submission >.<
+- README.md looks nice!
