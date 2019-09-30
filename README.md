@@ -1,6 +1,16 @@
 # STAT545 Assignment Repository
 _This repository contains all of my assignment documents from __STAT 545__ lectures at UBC._
 
+## Links to homework HTML pages:
+
+
+|----------|-------------|
+| _Assignment #1_ | [slides](https://kaitsull.github.io/STAT545-assignments/hw01/hw01_xaringan-gapminder.html)|
+| _Assignment #2_ |[hw02 html file] (https://kaitsull.github.io/STAT545-assignments/hw02/hw02.html) |
+| _Assignment #3_ ||
+    
+
+
 ## :octocat: Introduction :octocat:
 My name is Kaitlin Sullivan. 
 I am a Master's student in the Neuroscience program at the University of British Columbia. 
