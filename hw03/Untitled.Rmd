@@ -1,0 +1,69 @@
+---
+title: "hw03 - `ggplot` and `dplyr`"
+output: html_document
+author: "Kaitlin Sullivan (kaitsull)"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(ggplot2)
+library(gapminder)
+```
+
+## Task Option #1
+Abundance of countries with low life expectancy over time by continent.
+(I considered any life expectancy below 55 years as a low life expectancy.)
+
+```{r}
+
+gapminder %>% 
+  filter(lifeExp < 55) %>%
+  group_by(year, continent) %>% 
+  count(continent) %>% 
+  select(year, n) %>% 
+  ggplot(aes(x = year, y = n)) +
+  geom_histogram(stat = "identity") +
+  facet_wrap(~ continent) +
+  labs(
+    title = "Abundance of Countries With a Low Life Expectancy Over Time",
+    subtitle = "(Low life expectancy is considered as under 55 years of age.)",
+    x = "Year", 
+    y = "Number of Countries")
+
+```
+
+
+## Task Option #2
+Maximum and minimum GDP per capita in each of the continents.
+
+```{r}
+
+gapminder %>% 
+  group_by(year, continent) %>%
+  arrange(year, continent) %>% 
+  mutate(maximum = max(gdpPercap), minimum = min(gdpPercap)) %>% 
+  filter(gdpPercap == maximum | gdpPercap == minimum) %>% 
+  ggplot(aes(year, gdpPercap, colour = continent)) +
+  geom_point() +
+  facet_wrap(~ continent) +
+  labs(
+    title = "Maximum and Minimum GDP per capita in each country over the years"
+  )
+
+```
+
+
+## Task Option #5
+How is life expectancy changing over time in each continent?
+
+```{r}
+gapminder %>% 
+  ggplot(aes(x = year, y = lifeExp, colour = continent, group = country)) +
+  geom_line(alpha = 0.3) +
+  facet_wrap(~ continent) +
+  labs(
+    title = "Changes in Life Expectancy Over Time on Each Continent"
+  )
+```
+
