@@ -4,10 +4,11 @@ _This repository contains all of my assignment documents from __STAT 545__ lectu
 ## Links to homework HTML pages:
 
 
+|Assignment|Link         |
 |----------|-------------|
 | _Assignment #1_ | [slides](https://kaitsull.github.io/STAT545-assignments/hw01/hw01_xaringan-gapminder.html)|
-| _Assignment #2_ | [hw02 html file] (https://kaitsull.github.io/STAT545-assignments/hw02/hw02.html) |
-| _Assignment #3_ | [hw03 html file] (https://kaitsull.github.io/STAT545-assignments/hw03/hw03.html) |
+| _Assignment #2_ | [hw02 html file](https://kaitsull.github.io/STAT545-assignments/hw02/hw02.html) |
+| _Assignment #3_ | [hw03 html file](https://kaitsull.github.io/STAT545-assignments/hw03/hw03.html) |
     
 
 
